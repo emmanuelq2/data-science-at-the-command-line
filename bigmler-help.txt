@@ -1,0 +1,373 @@
+usage: bigmler main [-h] [--api-key API_KEY] [--args-separator ARGS_SEPARATOR]
+                    [--balance] [--batch]
+                    [--batch-prediction-attributes BATCH_PREDICTION_ATTRIBUTES]
+                    [--batch-prediction-tag BATCH_PREDICTION_TAG]
+                    [--black-box] [--category CATEGORY]
+                    [--class THRESHOLD_CLASS] [--clear-logs]
+                    [--combine-votes VOTES_DIRS] [--cpp CPP]
+                    [--cross-validation-rate CROSS_VALIDATION_RATE]
+                    [--dataset DATASET]
+                    [--dataset-attributes DATASET_ATTRIBUTES]
+                    [--dataset-fields DATASET_FIELDS]
+                    [--dataset-file DATASET_FILE] [--dataset-off]
+                    [--dataset-price DATASET_PRICE]
+                    [--dataset-tag DATASET_TAG] [--datasets DATASETS]
+                    [--debug] [--description DESCRIPTION] [--dev]
+                    [--ensemble ENSEMBLE]
+                    [--ensemble-attributes ENSEMBLE_ATTRIBUTES]
+                    [--ensemble-file ENSEMBLE_FILE]
+                    [--ensemble-tag ENSEMBLE_TAG] [--ensembles ENSEMBLES]
+                    [--evaluate]
+                    [--evaluation-attributes EVALUATION_ATTRIBUTES]
+                    [--export-fields EXPORT_FIELDS] [--fast]
+                    [--field-attributes FIELD_ATTRIBUTES]
+                    [--field-names FIELD_ATTRIBUTES] [--fields-map FIELDS_MAP]
+                    [--import-fields IMPORT_FIELDS]
+                    [--json-filter JSON_FILTER]
+                    [--label-aggregates LABEL_AGGREGATES]
+                    [--label-separator LABEL_SEPARATOR] [--labels LABELS]
+                    [--lisp-filter LISP_FILTER] [--local]
+                    [--locale USER_LOCALE]
+                    [--max-batch-models MAX_BATCH_MODELS]
+                    [--max-categories MAX_CATEGORIES]
+                    [--max-parallel-ensembles MAX_PARALLEL_ENSEMBLES]
+                    [--max-parallel-evaluations MAX_PARALLEL_EVALUATIONS]
+                    [--max-parallel-models MAX_PARALLEL_MODELS] [--median]
+                    [--method {plurality,confidence weighted,probability weighted,threshold,combined}]
+                    [--missing-splits]
+                    [--missing-strategy {last,proportional}] [--model MODEL]
+                    [--model-attributes MODEL_ATTRIBUTES]
+                    [--model-fields MODEL_FIELDS] [--model-file MODEL_FILE]
+                    [--model-price MODEL_PRICE] [--model-tag MODEL_TAG]
+                    [--models MODELS] [--multi-dataset]
+                    [--multi-dataset-attributes MULTI_DATASET_ATTRIBUTES]
+                    [--multi-label] [--multi-label-fields MULTI_LABEL_FIELDS]
+                    [--name NAME] [--new-fields NEW_FIELDS] [--no-balance]
+                    [--no-batch] [--no-black-box] [--no-clear-logs] [--no-csv]
+                    [--no-dataset] [--no-dataset-off] [--no-debug] [--no-dev]
+                    [--no-fast] [--no-median] [--no-missing-splits]
+                    [--no-model] [--no-multi-dataset] [--no-multi-label]
+                    [--no-no-csv] [--no-no-dataset] [--no-no-model]
+                    [--no-no-tag] [--no-prediction-header] [--no-progress-bar]
+                    [--no-public-dataset] [--no-randomize] [--no-replacement]
+                    [--no-store] [--no-tag] [--no-test-header]
+                    [--no-train-header] [--no-upload] [--no-white-box]
+                    [--node-threshold NODE_THRESHOLD]
+                    [--number-of-evaluations NUMBER_OF_EVALUATIONS]
+                    [--number-of-models NUMBER_OF_MODELS]
+                    [--objective OBJECTIVE_FIELD]
+                    [--objective-weights OBJECTIVE_WEIGHTS]
+                    [--output PREDICTIONS] [--output-dir OUTPUT_DIR]
+                    [--prediction-fields PREDICTION_FIELDS]
+                    [--prediction-header]
+                    [--prediction-info {brief,normal,full,full data}]
+                    [--prediction-tag PREDICTION_TAG] [--progress-bar]
+                    [--project PROJECT] [--project-id PROJECT_ID]
+                    [--pruning {smart,statistical,no-pruning}]
+                    [--public-dataset] [--random-candidates RANDOM_CANDIDATES]
+                    [--randomize] [--remote] [--replacement]
+                    [--reports [{gazibit} [{gazibit} ...]]]
+                    [--resources-log LOG_FILE] [--resume]
+                    [--sample-rate SAMPLE_RATE] [--seed SEED] [--shared]
+                    [--source SOURCE] [--source-attributes SOURCE_ATTRIBUTES]
+                    [--source-file SOURCE_FILE] [--source-tag SOURCE_TAG]
+                    [--stack-level STACK_LEVEL] [--store] [--tag TAG]
+                    [--test [TEST_SET]] [--test-dataset TEST_DATASET]
+                    [--test-datasets TEST_DATASETS]
+                    [--test-field-attributes TEST_FIELD_ATTRIBUTES]
+                    [--test-header] [--test-separator TEST_SEPARATOR]
+                    [--test-source TEST_SOURCE] [--test-split TEST_SPLIT]
+                    [--test-types TEST_TYPES] [--threshold THRESHOLD]
+                    [--tlp TLP] [--to-csv [TO_CSV]] [--to-dataset]
+                    [--train [TRAINING_SET]] [--train-header]
+                    [--training-separator TRAINING_SEPARATOR] [--types TYPES]
+                    [--unshared] [--upload] [--username USERNAME]
+                    [--verbosity {0,1}] [--version]
+                    [--weight-field WEIGHT_FIELD] [--white-box]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --api-key API_KEY     BigML's API key.
+  --args-separator ARGS_SEPARATOR
+                        Separator used in arguments with multiple values.
+  --balance             Automatically balance all objective classes evenly.
+  --batch               Create remote predictions in batch.
+  --batch-prediction-attributes BATCH_PREDICTION_ATTRIBUTES
+                        Path to a json file describing batch prediction
+                        attributes.
+  --batch-prediction-tag BATCH_PREDICTION_TAG
+                        Select batch prediction tagged with tag to be deleted.
+  --black-box           Make generated model black-box.
+  --category CATEGORY   Category code.
+  --class THRESHOLD_CLASS
+                        Category used in threshold combiner method.
+  --clear-logs          Clear global bigmler log files.
+  --combine-votes VOTES_DIRS
+                        Comma separated list of directories that contain
+                        models' votes for the same test set.
+  --cpp CPP             The number of credits that other users will consume to
+                        make a prediction with your model.
+  --cross-validation-rate CROSS_VALIDATION_RATE
+                        Part of training data to be held out for cross-
+                        validation.
+  --dataset DATASET     BigML dataset Id.
+  --dataset-attributes DATASET_ATTRIBUTES
+                        Path to a json file describing dataset attributes.
+  --dataset-fields DATASET_FIELDS
+                        Comma-separated list of field column numbers to
+                        include in the dataset.
+  --dataset-file DATASET_FILE
+                        BigML dataset JSON structure file.
+  --dataset-off         Excluding one dataset at a time from the datasets list
+                        to test.
+  --dataset-price DATASET_PRICE
+                        Price for the dataset.
+  --dataset-tag DATASET_TAG
+                        Select datasets tagged with tag to be deleted
+  --datasets DATASETS   Path to a file containing dataset/ids. Just one
+                        dataset per line (e.g.,
+                        dataset/50a20697035d0706da0004a4).
+  --debug               Activate debug level
+  --description DESCRIPTION
+                        Path to a file with a description in plain text or
+                        markdown.
+  --dev                 Compute a test output using BigML FREE development
+                        environment.
+  --ensemble ENSEMBLE   BigML ensemble Id.
+  --ensemble-attributes ENSEMBLE_ATTRIBUTES
+                        Path to a json file describing ensemble attributes.
+  --ensemble-file ENSEMBLE_FILE
+                        BigML ensemble JSON structure file.
+  --ensemble-tag ENSEMBLE_TAG
+                        Select ensemble tagged with tag to be deleted.
+  --ensembles ENSEMBLES
+                        Path to a file containing ensemble/ids. One ensemble
+                        per line (e.g., ensemble/50a206a8035d0706dc000376).
+  --evaluate            Evaluate command.
+  --evaluation-attributes EVALUATION_ATTRIBUTES
+                        Path to a json file describing evaluation attributes.
+  --export-fields EXPORT_FIELDS
+                        Path to a csv file describing the available field
+                        information. The first row is used as header.
+  --fast                Enables fast ensemble's predictions with no partial
+                        results files.
+  --field-attributes FIELD_ATTRIBUTES
+                        Path to a csv file describing field attributes. One
+                        definition per line (e.g., 0,'Last Name').
+  --field-names FIELD_ATTRIBUTES
+                        Path to a csv file describing field names. One
+                        definition per line (e.g., 0,'Last Name').
+  --fields-map FIELDS_MAP
+                        Path to a csv file describing fields mapping. One
+                        definition per line (e.g., 00000,00000a).
+  --import-fields IMPORT_FIELDS
+                        Path to a csv file describing field attributes. The
+                        first row is used as header and rows are expected to
+                        comply the the --export-fields output.
+  --json-filter JSON_FILTER
+                        File including a JSON filter.
+  --label-aggregates LABEL_AGGREGATES
+                        Comma-separated list of aggregation functions for the
+                        multi-label field labels. Allowed aggregates: count,
+                        first and last
+  --label-separator LABEL_SEPARATOR
+                        Separator used when splitting labels in the objective
+                        field.
+  --labels LABELS       Comma-separated list of the labels to be expanded from
+                        a multi-label field.
+  --lisp-filter LISP_FILTER
+                        File including a Lisp filter.
+  --local               Compute predictions locally
+  --locale USER_LOCALE  Chosen locale code string.
+  --max-batch-models MAX_BATCH_MODELS
+                        Max number of models to predict from in parallel.
+  --max-categories MAX_CATEGORIES
+                        Max number of categories to be included in a model.
+  --max-parallel-ensembles MAX_PARALLEL_ENSEMBLES
+                        Max number of ensembles to create in parallel.
+  --max-parallel-evaluations MAX_PARALLEL_EVALUATIONS
+                        Max number of evaluations to create in parallel.
+  --max-parallel-models MAX_PARALLEL_MODELS
+                        Max number of models to create in parallel.
+  --median              Use medtan instead on mean as node prediction.
+  --method {plurality,confidence weighted,probability weighted,threshold,combined}
+                        Method to combine votes from ensemble predictions.
+                        Allowed methods: plurality, "confidence weighted",
+                        "probability weighted", threshold. Also "combined" for
+                        datasets with subsets of categories
+  --missing-splits      Accept missing values as valid in some branches of
+                        thetree.
+  --missing-strategy {last,proportional}
+                        Strategy used when the field used in the split to next
+                        nodes is missing in the input data. Allowed values:
+                        last or proportional
+  --model MODEL         BigML model Id.
+  --model-attributes MODEL_ATTRIBUTES
+                        Path to a json file describing model attributes.
+  --model-fields MODEL_FIELDS
+                        Comma-separated list of input fields (predictors) to
+                        create the model.
+  --model-file MODEL_FILE
+                        BigML model JSON structure file.
+  --model-price MODEL_PRICE
+                        The price other users must pay to clone your model.
+  --model-tag MODEL_TAG
+                        Retrieve models that were tagged with tag.
+  --models MODELS       Path to a file containing model/ids. One model per
+                        line (e.g., model/50a206a8035d0706dc000376).
+  --multi-dataset       Generate a new dataset by adding existing datasets.
+  --multi-dataset-attributes MULTI_DATASET_ATTRIBUTES
+                        Path to a json file describing multi-dataset
+                        attributes.
+  --multi-label         The objective field has multiple labels that should be
+                        treated independently.
+  --multi-label-fields MULTI_LABEL_FIELDS
+                        Comma-separated list of the fields to be expanded as
+                        being multi-label. Name or column number.
+  --name NAME           Name for the resources in BigML.
+  --new-fields NEW_FIELDS
+                        Path to the file containing fields generators. Used to
+                        create a new dataset from an existing one by adding
+                        new fields combining or setting its contents.
+  --no-balance          Do not automatically balance all objective classes
+                        evenly.
+  --no-batch            Create remote predictions individually.
+  --no-black-box        Doesn't make generated model black-box.
+  --no-clear-logs       Don't clear global bigmler log files.
+  --no-csv              Do not create a csv file as output of a batch
+                        prediction.
+  --no-dataset          Do not create a dataset.
+  --no-dataset-off      Turning off the dataset-off flag.
+  --no-debug            Deactivate debug level.
+  --no-dev              Compute a test output using BigML standard development
+                        environment.
+  --no-fast             Enables fast ensemble's predictions with partial
+                        results files.
+  --no-median           Use mean instead on median as node prediction.
+  --no-missing-splits   Turning off the --missing-splits flag: don't include
+                        missing values in branches of the tree.
+  --no-model            Do not create a model.
+  --no-multi-dataset    Do not generate a new dataset.
+  --no-multi-label      The objective field has not multiple labels.
+  --no-no-csv           Create a csv file as output of a batch prediction (as
+                        opposed to --no-csv)
+  --no-no-dataset       Create a dataset.
+  --no-no-model         Create a model.
+  --no-no-tag           Tag resources with default BigMLer tags.
+  --no-prediction-header
+                        Headers are not added to the prediction file.
+  --no-progress-bar     Show progress details when creating a source.
+  --no-public-dataset   Doesn't make generated dataset public.
+  --no-randomize        Doesn't randomize feature selection at each split.
+  --no-replacement      Don't use replacement when sampling.
+  --no-store            Don't store the retrieved resources in the output
+                        directory.
+  --no-tag              No tag resources with default BigMLer tags.
+  --no-test-header      The test set file hasn't a header.
+  --no-train-header     The train set file hasn't a header.
+  --no-upload           Disables upload for reports
+  --no-white-box        Doesn't make generated model white-box.
+  --node-threshold NODE_THRESHOLD
+                        Maximum number of nodes in the model.
+  --number-of-evaluations NUMBER_OF_EVALUATIONS
+                        Number of evaluations used for cross-validation.
+  --number-of-models NUMBER_OF_MODELS
+                        Number of models to create when using ensembles.
+  --objective OBJECTIVE_FIELD
+                        The column number of the Objective Field or its name,
+                        if headers are given.
+  --objective-weights OBJECTIVE_WEIGHTS
+                        Path to a CSV file of class, weight pairs.
+  --output PREDICTIONS  Path to the file to output predictions.
+  --output-dir OUTPUT_DIR
+                        Directory where session files will be stored. --output
+                        file path will override it if both are set.
+  --prediction-fields PREDICTION_FIELDS
+                        Fields added to the prediction file.
+  --prediction-header   Headers are added to the prediction file.
+  --prediction-info {brief,normal,full,full data}
+                        Prediction log format: 'brief' will only log
+                        predictions, 'normal' will write confidence too,
+                        'full' will write in a row the input data that
+                        generates the prediction followed by the latter.
+  --prediction-tag PREDICTION_TAG
+                        Select prediction tagged with tag to be deleted.
+  --progress-bar        Show progress details when creating a source.
+  --project PROJECT     Name of the project to be created and/or used
+                        inresource creation.
+  --project-id PROJECT_ID
+                        Id of the project to be used insource creation.
+  --pruning {smart,statistical,no-pruning}
+                        Set pruning type: smart, statistical, no-pruning.
+  --public-dataset      Make generated dataset public.
+  --random-candidates RANDOM_CANDIDATES
+                        Number of fields selected at random in ensembles'
+                        construction.
+  --randomize           Randomize feature selection at each split.
+  --remote              Compute predictions remotely.
+  --replacement         Use replacement when sampling.
+  --reports [{gazibit} [{gazibit} ...]]
+                        Output report formats.
+  --resources-log LOG_FILE
+                        Path to a file to store new resources ids. One
+                        resource per line (e.g.,
+                        model/50a206a8035d0706dc000376).
+  --resume              Resume command.
+  --sample-rate SAMPLE_RATE
+                        Sample rate to split datasets.
+  --seed SEED           Value used as seed in dataset splits and sampling.
+  --shared              Share resources and use its shared urls in reports.
+  --source SOURCE       BigML source Id.
+  --source-attributes SOURCE_ATTRIBUTES
+                        Path to a json file describing source attributes.
+  --source-file SOURCE_FILE
+                        BigML source JSON structure file.
+  --source-tag SOURCE_TAG
+                        Select sources tagged with tag to be deleted
+  --stack-level STACK_LEVEL
+                        Resume command.
+  --store               Store the retrieved resources in the output directory.
+  --tag TAG             Tag to later retrieve new resources.
+  --test [TEST_SET]     Test set path.
+  --test-dataset TEST_DATASET
+                        BigML test dataset Id.
+  --test-datasets TEST_DATASETS
+                        Path to a file containing dataset/ids. Just one
+                        dataset per line (e.g.,
+                        dataset/50a20697035d0706da0004a4).
+  --test-field-attributes TEST_FIELD_ATTRIBUTES
+                        Path to a csv file describing field attributes. One
+                        definition per line (e.g., 0,'Last Name').
+  --test-header         The test set file has a header.
+  --test-separator TEST_SEPARATOR
+                        Test set field separator.
+  --test-source TEST_SOURCE
+                        BigML test source Id.
+  --test-split TEST_SPLIT
+                        Part of training data to be held out for testing (e.g.
+                        --test-split 0.2).
+  --test-types TEST_TYPES
+                        Path to a file describing field types. One definition
+                        per line (e.g., 0, 'numeric').
+  --threshold THRESHOLD
+                        Minimum number of votes to issue a prediction for the
+                        threshold combiner.
+  --tlp TLP             BigML ensemble's creation task-level parallelism.
+  --to-csv [TO_CSV]     Path to the exported dataset file.
+  --to-dataset          Create a dataset as ouput of a batch prediction.
+  --train [TRAINING_SET]
+                        Training set path.
+  --train-header        The train set file has a header.
+  --training-separator TRAINING_SEPARATOR
+                        Training set field separator.
+  --types TYPES         Path to a file describing field types. One definition
+                        per line (e.g., 0, 'numeric').
+  --unshared            Share resources and use its shared urls in reports.
+  --upload              Enables upload for reports
+  --username USERNAME   BigML's username.
+  --verbosity {0,1}     Set verbosity: 0 to turn off, 1 to turn on.
+  --version             show program's version number and exit
+  --weight-field WEIGHT_FIELD
+                        Sets the name (or column) of the field that contains
+                        the weights for the instances.
+  --white-box           Make generated model white-box.
